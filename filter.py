@@ -26,10 +26,10 @@ def get_average_brightness(block, size, gradation_step):
     :return int:
 
     >>> get_average_brightness(np.array([[[1, 2, 3], [4, 5, 6]]]), 50, 5)
-    0
+    1
 
     >>> get_average_brightness(np.array([[[15, 10, 11]], [[40, 11, 15]]]), 150, 10)
-    0
+    21
     """
     average_color = (block[:size, :size].sum() / 3) // size ** 2
     return int(average_color // gradation_step) * gradation_step
