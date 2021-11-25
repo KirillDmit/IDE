@@ -42,7 +42,9 @@ def main():
     image = np.array(image_file)
     gradation_step = 255 // gradations_count
 
-    res = Image.fromarray(convert_image_to_mosaic(image, block_size, gradation_step))
+    done = convert_image_to_mosaic(image, block_size, gradation_step)
+
+    res = Image.fromarray(done)
     res.save(input("Введите имя файла, в которой хотите сохранить результат: "))
 
 
